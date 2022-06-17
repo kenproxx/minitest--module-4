@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Post</h1>
+
+<form th:action="@{/search}"  novalidate="novalidate">
+    <input type="text" th:name="title" />
+    <input type="submit" value="Search"/>
+</form>
+
+
+sort by likes
+<form th:action="@{/sort}"  novalidate="novalidate">
+    <input type="submit" value="Sort"/>
+</form>
+
+sort by createAt
+<form th:action="@{/sort2}"  novalidate="novalidate">
+    <input type="submit" value="Sort"/>
+</form>
+
+    <table>
+        <tr>
+            <th>ID</th>
+            <th>Content</th>
+            <th>Title</th>
+            <th>CreateAt</th>
+            <th>Like</th>
+        </tr>
+        <tr th:each="post : ${list}">
+            <td th:text="${post.getId()}"></td>
+            <td th:text="${post.getTitle()}"></td>
+            <td th:text="${post.getContent()}"></td>
+            <td th:text="${post.getCreateAt()}"></td>
+            <td th:text="${post.getLikes()}"></td>
+            <td><a th:href="@{{id}/edit(id=${post.getId()})}">Edit</a></td>
+        </tr>
+    </table>
+</body>
+</html>

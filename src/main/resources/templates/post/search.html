@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<table>-->
+<!--    <tr>-->
+<!--        <th>ID</th>-->
+<!--        <th>Content</th>-->
+<!--        <th>Title</th>-->
+<!--        <th>CreateAt</th>-->
+<!--        <th>Like</th>-->
+<!--    </tr>-->
+<!--    <tr th:each="post : ${list}">-->
+<!--        <td th:text="${post.getId()}"></td>-->
+<!--        <td th:text="${post.getTitle()}"></td>-->
+<!--        <td th:text="${post.getContent()}"></td>-->
+<!--        <td th:text="${post.getCreateAt()}"></td>-->
+<!--        <td th:text="${post.getLikes()}"></td>-->
+<!--        <td><a th:href="@{{id}/edit(id=${post.getId()})}">Edit</a></td>-->
+<!--    </tr>-->
+<!--</table>-->
+
+display post
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Content</th>
+        <th>Title</th>
+        <th>CreateAt</th>
+        <th>Like</th>
+    </tr>
+    <tr th:each="post : ${post}">
+        <td th:text="${post.getId()}"></td>
+        <td th:text="${post.getTitle()}"></td>
+        <td th:text="${post.getContent()}"></td>
+        <td th:text="${post.getCreateAt()}"></td>
+        <td th:text="${post.getLikes()}"></td>
+        <td><a th:href="@{{id}/edit(id=${post.getId()})}">Edit</a></td>
+    </tr>
+</table>
+</body>
+</html>

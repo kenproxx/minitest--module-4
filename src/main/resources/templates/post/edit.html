@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Edit</h1>
+
+<form   th:method="POST">
+    <input type="hidden" name="id" th:value="${post.getId()}" >
+    <input type="text" name="title"  th:value="${post.getTitle()}">
+    <input type="text" name="content" th:value="${post.getContent()}">
+    <input type="text" name="createAt" th:value="${post.getCreateAt()}">
+    <input type="text" name="likes" th:value="${post.getLikes()}">
+    <input type="submit" value="Submit">
+</form>
+
+</body>
+</html>
